@@ -26327,25 +26327,63 @@ var ListManager = createReactClass({
         this.setState({ newItemText: e.target.value });
     },
     render: function () {
+        var divStyle = {
+            marginTop: 10
+        };
+        var panelStyle = {
+            padding: 20
+        };
+        var headingStyle = {};
+        if (this.props.headingColor) {
+            headingStyle.background = this.props.headingColor;
+        }
         return React.createElement(
             'div',
-            null,
+            { style: divStyle },
             React.createElement(
-                'h3',
-                null,
-                this.props.title
-            ),
-            React.createElement(
-                'form',
-                { onSubmit: this.handleSubmit },
-                React.createElement('input', { onChange: this.onChange, value: this.state.newItemText }),
+                'div',
+                { className: 'panel panel-primary' },
                 React.createElement(
-                    'button',
-                    null,
-                    'Add'
+                    'div',
+                    { style: panelStyle, style: headingStyle, className: 'panel-heading' },
+                    React.createElement(
+                        'h3',
+                        null,
+                        this.props.title
+                    )
+                ),
+                React.createElement(
+                    'div',
+                    { style: panelStyle, className: 'panel-body' },
+                    React.createElement(
+                        'form',
+                        { onSubmit: this.handleSubmit, className: 'form-group' },
+                        React.createElement(
+                            'div',
+                            { className: 'row' },
+                            React.createElement(
+                                'div',
+                                { className: 'col-sm-8' },
+                                React.createElement('input', { onChange: this.onChange, value: this.state.newItemText, className: 'form-control' })
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'col-sm-2' },
+                                React.createElement(
+                                    'button',
+                                    { className: 'btn btn-primary' },
+                                    'Add'
+                                )
+                            )
+                        )
+                    )
+                ),
+                React.createElement(
+                    'div',
+                    { className: 'row' },
+                    React.createElement(List, { items: this.state.items })
                 )
-            ),
-            React.createElement(List, { items: this.state.items })
+            )
         );
     }
 });
@@ -26358,5 +26396,7 @@ var ReactDOM = require('react-dom');
 var ListManager = require('./components/ListManager.jsx');
 
 ReactDOM.render(React.createElement(ListManager, { title: 'ToDo List' }), document.getElementById('todo'));
+ReactDOM.render(React.createElement(ListManager, { title: 'Plan List', headingColor: 'orange' }), document.getElementById('plan'));
+ReactDOM.render(React.createElement(ListManager, { title: 'Done List', headingColor: 'green' }), document.getElementById('done'));
 
 },{"./components/ListManager.jsx":25,"react":16,"react-dom":13}]},{},[26]);
