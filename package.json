@@ -4,6 +4,7 @@
   "description": "Todo list with react",
   "main": "index.js",
   "scripts": {
+    "start": "watchify src/main.jsx -v -t [ babelify --presets [ react ] ] -o public/js/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,10 +19,14 @@
   "homepage": "https://github.com/mk-nyein/todo-list-react#readme",
   "dependencies": {
     "babel-preset-react": "^6.24.1",
-    "babelify": "^10.0.0",
-    "browserify": "^16.2.3",
+    "babelify": "^8.0.0",
+    "create-react-class": "^15.6.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "watchify": "^3.11.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5"
   }
 }
