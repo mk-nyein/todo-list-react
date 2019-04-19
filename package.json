@@ -1,0 +1,27 @@
+{
+  "name": "react-todo",
+  "version": "1.0.0",
+  "description": "Todo list with react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-nyein/todo-list-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mk-nyein/todo-list-react/issues"
+  },
+  "homepage": "https://github.com/mk-nyein/todo-list-react#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "watchify": "^3.11.1"
+  }
+}
